@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <link rel="stylesheet" type="text/css" href="index-1-5.css">
+        <link href = "https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css" 
+           rel = "stylesheet">
+        <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+        <script>
+            $(function() {
+               $( "#datepicker" ).datepicker();
+            });
+
+            $(function() {
+               var availableTags = [
+                "Ghost Kato",
+                "Trek Domane",
+                "Trek Émonda",
+                "Trek Remedy",
+                "Wilier GTR Team",
+            ];
+            $("#brands").autocomplete({
+               source: availableTags,
+               minLength:0
+            }).bind('focus', function(){ $(this).autocomplete("search"); } );
+            });
+
+
+            $(function(){
+              $('.next').on('click', function(){
+              var currentImg = $('.activated');
+              var nextImg = currentImg.next();
+
+               if(nextImg.length){
+                currentImg.removeClass('activated').css('z-index', -10);
+                nextImg.addClass('activated').css('z-index', 10);
+               }
+
+                if(nextImg.length === 0){
+                  nextImg = $('.slider-inner p').first();
+                  nextImg.addClass('activated').css('z-index', 10);
+                }
+              });
+
+              $('.prev').on('click', function(){
+              var currentImg = $('.activated');
+              var prevImg = currentImg.prev();
+
+                if(prevImg.length){
+                  currentImg.removeClass('activated').css('z-index', -10);
+                  prevImg.addClass('activated').css('z-index', 10);
+                }
+
+                if(prevImg.length === 0){
+                  prevImg = $('.slider-inner p').last();
+                  prevImg.addClass('activated').css('z-index', 10);
+                }
+              });
+            });
+
+
+        </script>
+
+        <script src="registr.js"></script>
+        
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <button id="loginpopup" onclick="div_show()">Registration</button>
+                <h1 class="slogan">Bicycle shop VELOMANIA</h1> 
+                <img class="logo" src="https://static8.depositphotos.com/1178962/1020/v/450/depositphotos_10201688-stock-illustration-bicycle-set.jpg" alt=""/>
+                
+            </header>
+            <nav class="aside-l">           
+                <a class="active" href="#home">Home</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+            </nav>
+            <article class="main">
+                <div class="product_container">
+                    <div class="product-card-top">
+                        <a href="#">
+                        <div class="badge">72% off</div>
+                        <div class="product-top-img">
+                            <img src="https://st.depositphotos.com/1503367/3042/i/950/depositphotos_30421475-stock-photo-bicycle.jpg" alt="">
+                        </div> 
+                        <div class="bottom_data">           
+                            <div id="textbox_top">
+                                <p class="price">$96.99<small class="strikediag">$175.00</small></p>
+                                <p class="shop">Velomania</p>
+                            </div>
+                            <div style="clear: both;"></div>
+                            <div class="description"><span class="lined">Road bike</span> Wilier GTR Team disc 28" Shimano RS170 2020</div>
+                            <div id="textbox_bottom">
+                                <p class="shipping">Free Shipping</p>
+                                <p class="line"> &nbsp;| &nbsp;</p>
+                                <p class="new">New</p>
+                                <p class="line">&nbsp; | &nbsp;</p>
+                                <p class="time">02:20:44</p>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>	
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <a href="#">
+                        <div class="badge">68% off</div>
+                        <div class="product-img">
+                            <img src="https://st2.depositphotos.com/3547923/7384/v/450/depositphotos_73844055-stock-illustration-orange-retro-bike.jpg" alt="">                                
+                        </div>
+                        <div class="inl_description"><span class="lined">Road bike</span> Trek Émonda SL 5 28" mat trek gloss vipers orange 2020</div>
+                        <div class="bottom_data">          
+                            <div id="textbox_top">
+                                <p class="price">$86.99<small class="strikediag">$196.00</small></p>
+                                <p class="shop">Velomania</p>
+                            </div>
+                            <div style="clear: both;"></div>           
+                            <div id="textbox_bottom">
+                                <p class="shipping"></p>
+                                <p class="line"></p>
+                                <p class="new">New</p>
+                                <p class="line"></p>
+                                <p class="time"></p>
+                            </div>
+                            <div style="clear: both;"></div>
+                           </div>	
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <a href="#">
+                        <div class="badge">64% off</div>
+                        <div class="product-img">
+                            <img src="https://st.depositphotos.com/3265301/4704/i/950/depositphotos_47040873-stock-photo-red-bike-isolated-on-white.jpg" alt="">        
+                        </div>
+                        <div class="inl_description"><span class="lined">MTB bike</span> Trek Remedy 8 GX 27,5" 650B teal to volt red 2020</div>
+                        <div class="bottom_data">          
+                            <div id="textbox_top">
+                                <p class="price">$82.99<small class="strikediag">$188.00</small></p>
+                                <p class="shop">Velomania</p>
+                            </div>
+                            <div style="clear: both;"></div>
+                            <div id="textbox_bottom">
+                                <p class="shipping">Free Shipping</p>
+                                <p class="line">&nbsp; &emsp;|&emsp; &nbsp;</p>
+                                <p class="new">New</p>
+                                <p class="line"></p>
+                                <p class="time"></p>
+                            </div>
+                            <div style="clear: both;"></div>
+                           </div>	
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <a href="#">
+                        <div class="badge">54% off</div>
+                        <div class="product-img">
+                            <img src="https://st2.depositphotos.com/1006542/7600/i/950/depositphotos_76006011-stock-photo-modern-sport-bicycle.jpg" alt="">           
+                        </div>
+                        <div class="inl_description"><span class="lined">MTB bike</span> Ghost Kato FS 3.7 AL and 27.5" jet black/riot red 2020</div>
+                        <div class="bottom_data">          
+                            <div id="textbox_top">
+                                <p class="price">$78.99<small class="strikediag">$157.00</small></p>
+                                <p class="shop">Velomania</p>
+                            </div>
+                            <div style="clear: both;"></div>
+                            <div id="textbox_bottom">
+                                <p class="shipping">Free Shipping</p>
+                                <p class="line"> &nbsp;| &nbsp;</p>
+                                <p class="new">New</p>
+                                <p class="line"> &nbsp; | &nbsp;</p>
+                                <p class="time">3 days<br>00:02:56</p>
+                            </div>
+                            <div style="clear: both;"></div>
+                           </div>	
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <a href="#">
+                        <div class="badge">54% off</div>
+                        <div class="product-img">
+                            <img src="https://st2.depositphotos.com/1063296/8338/i/950/depositphotos_83384974-stock-photo-vintage-black-bicycle-side-view.jpg" alt="">           
+                        </div>
+                        <div class="inl_description"><span class="lined">Road bike</span> Trek Domane AL 2 disk 28" gloss bike 2020</div>
+                        <div class="bottom_data">          
+                            <div id="textbox_top">
+                                <p class="price">$230.99<small class="strikediag">$396.00</small></p>
+                                <p class="shop">Velomania</p>
+                            </div>
+                            <div style="clear: both;"></div>
+                            <div id="textbox_bottom">
+                                <p class="shipping">Free Shipping</p>
+                                <p class="line"></p>
+                                <p class="new"></p>
+                                <p class="line"></p>
+                                <p class="time"></p>
+                            </div>
+                            <div style="clear: both;"></div>
+                           </div>	
+                        </a>
+                    </div>
+                    </div>
+            </article>
+            <aside class="aside-r">
+                <div class="search">
+                    <label for="brands">Bike brands: </label><br>
+                    <input id="brands" style="width: 200px;">
+                </div>
+                <div id = "datepicker"></div>
+
+                <div class="carousel">
+                    <div class="slider-outer">
+                
+                      <img src="https://image.flaticon.com/icons/svg/126/126492.svg" width="20" height="20" class="prev" alt="Prev">
+                
+                      <div class="slider-inner">
+                        <p class="activated">
+                          <img src="https://st.depositphotos.com/1503367/3042/i/950/depositphotos_30421475-stock-photo-bicycle.jpg" width="180" height="150">
+                          <br>
+                          Wilier GTR Team
+                        </p>
+                        <p>
+                          <img src="https://st2.depositphotos.com/3547923/7384/v/450/depositphotos_73844055-stock-illustration-orange-retro-bike.jpg" width="180" height="150">
+                          <br>
+                          Trek Émonda
+                        </p>
+                        <p>
+                          <img src="https://st.depositphotos.com/3265301/4704/i/950/depositphotos_47040873-stock-photo-red-bike-isolated-on-white.jpg" width="180" height="150">
+                          <br>
+                          Trek Remedy
+                        </p>
+                        <p>
+                          <img src="https://st2.depositphotos.com/1006542/7600/i/950/depositphotos_76006011-stock-photo-modern-sport-bicycle.jpg" width="180" height="150">
+                          <br>
+                          Ghost Kato
+                        </p>
+                        <p>
+                          <img src="https://st2.depositphotos.com/1063296/8338/i/950/depositphotos_83384974-stock-photo-vintage-black-bicycle-side-view.jpg" width="180" height="150">
+                          <br>
+                          Trek Domane
+                        </p>
+                       </div>
+                
+                      <img src="https://image.flaticon.com/icons/svg/126/126490.svg" width="20" height="20" class="next" alt="Next">
+                    </div>
+                </div>
+
+
+            </aside>
+            <footer class="footer">Copyright © 2020. Disclaimer</footer>
+        </div>
+
+        <div id="loginwraper">
+
+          <div class="login">
+            <form name='form-login'>
+              <img id="close" src="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/256/Windows-Close-Program-icon.png" onclick ="div_hide()">
+        
+                <h1>REGISTER</h1>
+    
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Name"> <div id="errName" class="error"></div>
+        
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="email"> <div id="errEmail" class="error"></div>
+        
+                <label for="pw1">Password</label>
+                <input type="password" id= "pw1"
+                       placeholder="Password"> <div id="errPw1" class="error"></div>
+    
+                <label for="pw2">Confirm Password</label>
+                <input type="password" id= "pw2"
+                       placeholder="Confirm password"> <div id="errPw2" class="error"></div>
+        
+                <input id="rgstr_btn" type="submit" value="Register" onclick="store(); return false;">
+    
+                <div id="errGen" class="error"></div>
+    
+                <p>or</p>
+
+                <script>
+    
+                function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+                  console.log('statusChangeCallback');
+                  console.log(response);                   // The current login status of the person.
+                  if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+                    testAPI(); 
+                    sessionStorage.setItem('token', response.authResponse.accessToken);  
+                  } else {                                 // Not logged into your webpage or we are unable to tell.
+                    document.getElementById('status').innerHTML = '';
+                  }
+                }
+              
+              
+                function checkLoginState() {               // Called when a person is finished with the Login Button.
+                  FB.getLoginStatus(function(response) {   // See the onlogin handler
+                    statusChangeCallback(response);
+                  });
+                }
+              
+              
+                window.fbAsyncInit = function() {
+                  FB.init({
+                    appId      : '598332814402920',
+                    cookie     : true,                     // Enable cookies to allow the server to access the session.
+                    xfbml      : true,                     // Parse social plugins on this webpage.
+                    version    : 'v2.8'           // Use this Graph API version for this call.
+                  });
+              
+              
+                  FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+                    statusChangeCallback(response);        // Returns the login status.
+                  });
+                };
+              
+                
+                (function(d, s, id) {                      // Load the SDK asynchronously
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "https://connect.facebook.net/en_US/sdk.js";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+              
+               
+                function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+                  console.log('Welcome!  Fetching your information.... ');
+                  FB.api('/me', function(response) {
+                    console.log('Successful login for: ' + response.name);
+                    document.getElementById('status').innerHTML =
+                      'Thanks for logging in, ' + response.name + '!';
+                  });
+              
+                  console.log("session storage");
+              for (i = 0; i < sessionStorage.length; i++) {
+                  console.log(sessionStorage.key(i) + "=[" + sessionStorage.getItem(sessionStorage.key(i)) + "]");
+              }
+                }
+              
+              </script>
+              
+              via Facebook 
+              
+              <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+              </fb:login-button>
+              
+              <div id="status">
+              </div>
+        
+            </form>
+        </div>
+            
+            </div>
+    </body>
+</html>

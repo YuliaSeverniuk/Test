@@ -1,0 +1,528 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+    
+    *
+    {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: 'Roboto';   
+    }
+    
+    a {
+     text-decoration:none;
+    }
+    
+    .container {
+        display: grid;
+        grid-template-areas:
+            "header header header"
+            "nav content side"
+            "footer footer footer";
+        grid-template-columns: 150px 1fr auto;
+        grid-template-rows: 150px 1fr 50px;         
+        height: 100vh;
+        }
+                   
+        .header {
+            grid-area: header;
+            display: flex;
+            padding: 5px;
+            background: url(https://media.gettyimages.com/photos/the-road-to-picture-id94330576?s=2048x2048);
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+            }
+    
+            .logo {
+                position: absolute; 
+                right: 5px;
+                top: 5px;
+                height: 140px; 
+                width: 140px; 
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+    
+            .slogan {
+                float: right; 
+                font-style: italic; 
+                font-size: 400%;
+                margin-right: 170px;
+                margin-left: 35%;
+                color: white;
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+            
+            #loginpopup {
+                position: absolute; 
+                left: 5px;
+                top: 100px; 
+                width:10%;
+                height:45px;
+                border-radius: 2px solid white;
+                border-radius: 3px;
+                border-style: none;
+                background-color: #f6a828;
+                color:#fff;
+                font-size:18px;
+                cursor:pointer;
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                transform: rotate(180deg);
+                }
+                
+
+                #loginwraper {
+                    width:100%;
+                    height:100%;
+                    opacity:.95;
+                    top:0;
+                    left:0;
+                    display:none;
+                    position:fixed;
+                    background-color:#313131;
+                    overflow:auto
+                    }
+
+                img#close {
+                    position:absolute;
+                    height: 30px;
+                    width: 30px;
+                    right: -15px;
+                    top:-14px;
+                    cursor:pointer
+                    }
+
+                .login {
+                    position:absolute;
+                    width: 320px;
+                    left:50%;
+                    top:17%;
+                    margin-left:-202px;
+                    font-family:'Raleway',sans-serif
+                    }
+                    
+                after { clear: both; }
+                    
+                    
+                .login form {
+                    margin: auto;
+                    padding: 22px 22px 22px 22px;
+                    width: 100%;
+                    border-radius: 5px;
+                    background: #30bb91;
+                    border-top: 3px solid #434a52;
+                    border-bottom: 3px solid #434a52;
+                    }
+                    
+                .login form span {
+                    background-color: #363b41;
+                    border-radius: 3px 0px 0px 3px;
+                    border-right: 3px solid #434a52;
+                    color: #606468;
+                    display: block;
+                    float: left;
+                    line-height: 50px;
+                    text-align: center;
+                    width: 50px;
+                    height: 50px;
+                    }
+                    
+                .login form input[type="text"] {
+                    background-color: #3b4148;
+                    border-radius: 0px 3px 3px 0px;
+                    color: #a9a9a9;
+                    margin-bottom: 1em;
+                    padding: 0 16px;
+                    width: 90%;
+                    height: 50px;
+                    }
+
+                .login form input[type="email"] {
+                    background-color: #3b4148;
+                    border-radius: 0px 3px 3px 0px;
+                    color: #a9a9a9;
+                    margin-bottom: 1em;
+                    padding: 0 16px;
+                    width: 90%;
+                    height: 50px;
+                    }
+
+                .login form input[type="password"] {
+                    background-color: #3b4148;
+                    border-radius: 0px 3px 3px 0px;
+                    color: #a9a9a9;
+                    margin-bottom: 1em;
+                    padding: 0 16px;
+                    width: 90%;
+                    height: 50px;
+                    }
+                    
+                .login form input[type="submit"] {
+                              background: #b5cd60;
+                              border: 0;
+                              width: 90%;
+                              height: 40px;
+                              border-radius: 3px;
+                              color: white;
+                              cursor: pointer;
+                              transition: background 0.3s ease-in-out;
+                            }
+                #login form input[type="submit"]:hover {
+                    background: #16aa56;
+                    }
+
+                .error{
+                    color: red;
+                    }
+                
+                #status {
+                    color: white;
+                    }
+
+        .aside-l {
+            grid-area: nav;
+            padding: 5px;
+            background: url(https://media.gettyimages.com/photos/the-road-to-picture-id94330576?s=2048x2048);
+            background-repeat: no-repeat;
+            }
+    
+        .aside-l a {
+            display: block;
+            width: 100px;
+            color: white;
+            padding: 16px;
+            text-decoration: none;
+            }
+    
+        .aside-l a.active {
+            background-color: #4CAF50;
+            }
+    
+        .aside-l a:hover:not(.active) {
+            background-color: #555;
+           }
+
+        div.ui-datepicker{
+            font-size:12px;
+           }
+           
+        .search {
+            color: white;
+            padding-top: 16px;
+            padding-bottom: 32px;
+        }
+
+        .carousel{
+            margin-top: 20px;
+        }
+
+        .slider-inner{
+            width:205px;
+            height:190px;
+            position:relative;
+            overflow:hidden;
+            float:left;
+            padding:3px;
+            background-color:white;
+            border: 2px solid lightsalmon;
+            border-radius: 5px;
+        }
+        
+        .slider-inner p{
+            display:none;
+            margin-left: 10px;
+              width:200px;
+              height:200px;
+              color: gray;
+              font-weight: bold;
+          }
+          
+          .slider-inner p.activated{
+              display:inline-block;
+          }
+
+          .prev,.next{
+            float:left;
+            margin-top:90px;
+            cursor: pointer;
+        }
+        
+        .prev{
+            position:relative;
+            margin-right:-45px;
+            z-index:100;
+        }
+        
+        .next{
+            position:relative;
+            margin-left:-20px;
+            z-index:100;
+        }
+
+           
+        .main {
+            grid-area: content;
+            padding: 10px;
+            }
+            
+        .aside-r {
+            grid-area: side;
+            background: url(https://media.gettyimages.com/photos/the-road-to-picture-id94330576?s=2048x2048);
+            background-repeat: no-repeat;
+            padding: 5px;
+            }
+            
+        .footer {
+            grid-area: footer;
+            padding: 5px;
+            text-align: center;
+            background: url(https://image.freepik.com/free-photo/pavement-texture_1084-97.jpg);
+            color: white;
+            }
+    
+            .product_container {
+                display: grid;
+                grid-column-gap: 10px;
+                grid-row-gap: 10px;
+                grid-template-columns: repeat(3, 330px);
+                grid-template-rows: repeat(2, 222px);
+                }
+    
+            .product-card-top {
+                grid-column: 1;
+                grid-row: 1 / 3;
+                }
+    
+            .product-card-top {
+                display: flex;
+                width: 330px;
+                position: relative;
+                border: 1px solid lightcoral;
+                background: #fafafa;
+                }
+    
+            .product-card {
+                display: flex;
+                position: relative;
+                width: 330px;
+                border: 1px solid lightsalmon;
+                background: #fafafa;  
+                }
+    
+            .badge {
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                font-size: 13px;
+                font-weight: 700;
+                background: lightcoral;
+                color: #fff;
+                padding: 10px 15px;
+                }
+    
+            .product-top-img {
+                display: flex;
+                width: 100%;  
+                height: 285px;
+                background: white;
+                }
+    
+            .product-top-img img {
+                max-width: 100%;
+                max-height: 100%;
+                }
+    
+            .product-img img {
+                max-width: 50%;
+                max-height: 50%;
+                position:absolute;
+                top: 3px;
+                right: 3px;
+                }
+    
+            .description {
+                margin-right: 35%; 
+                }
+    
+            .inl_description {
+                margin-top: 62px;             
+                height: 65px;
+                max-width: 50%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3; /* number of lines to show */
+                -webkit-box-orient: vertical; 
+                }
+    
+            #textbox_top {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px dotted #999;    
+                }
+    
+            #textbox_bottom {
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                border-top: 1px dotted #999;
+                }
+    
+            .shop, .shipping, .new, .time, .line, .description, .inl_description {
+                font-size: 15px;
+                padding: 10px;
+                color: #999;
+                }
+    
+            .price {
+                font-size: 18px;
+                color: lightcoral;
+                font-weight: 600;
+                padding: 10px;
+               }
+    
+            .strikediag {
+                background: linear-gradient(to top right, transparent 47.75%, currentColor 49.5%, currentColor 50.5%, transparent 52.25%);
+                }
+    
+            .price small {
+                font-size: 80%;
+                font-weight: 400;
+                color: #999;
+                display: inline-block;
+                margin-left: 5px;
+                }
+    
+            .product-card a:hover {
+                outline: 3px solid lightcoral;
+                }
+    
+            .product-card-top a:hover {
+                outline: 3px solid lightsalmon;
+                }
+    
+            a:hover .lined {
+                text-decoration: underline;
+                }
+    
+    
+    @media only screen and (max-width: 768px) {
+        .container {
+            grid-template-areas:
+                "header"
+                "nav"
+                "content"
+                "side"
+                "footer";
+                    
+            grid-template-columns: 1fr;
+            grid-template-rows:
+            minmax(150px, auto) /* Header */
+                minmax(75px, auto) /* Nav */
+                1fr /* Content */
+                minmax(470px, auto) /* Sidebar */
+                auto; /* Footer */
+                }
+                    
+                nav, aside {
+                    margin: 0;
+                    }
+    
+                .slogan {font-size: 2em;
+                    margin-left: 10%;}
+                .aside-l a {float: left;}
+
+                #loginpopup {
+                    font-size: 8px;
+                  }
+            }
+
+
+    
+    @media only screen and (max-width: 768px) {
+        .product_container  {
+            grid-template-columns: repeat(auto-fill, minmax(100%, 330px));
+      } 
+    }
+    
+    @media only screen and (min-width: 768px) {
+        .container {
+            grid-template-areas:
+                "header"
+                "nav"
+                "content"
+                "side"
+                "footer";
+                    
+            grid-template-columns: 1fr;
+            grid-template-rows:
+                minmax(150px, auto) /* Header */
+                minmax(75px, auto) /* Nav */
+                1fr /* Content */
+                minmax(470px, auto) /* Sidebar */
+                auto; /* Footer */
+                }
+                    
+                nav, aside {
+                    margin: 0;
+                    }
+                
+                .slogan {font-size: 3em;
+                    }
+    
+                .aside-l a {float: left;}
+
+                #loginpopup {
+                    font-size: 12px;
+                  }
+            }
+            
+
+    @media only screen and (min-width: 768px) {
+        .product_container  {
+            grid-template-columns: 330px 330px;
+      } 
+    }
+    
+    @media only screen and (min-width: 992px) {
+        .container {
+                grid-template-areas:
+                    "header header header"
+                    "nav content side"
+                    "footer footer footer";
+                grid-template-columns: 150px 1fr auto;
+                grid-template-rows: 150px 1fr 50px;         
+                height: 100vh;
+            }
+            .slogan {font-size: 400%;}
+
+            #loginpopup {
+                font-size: 18px;
+              }
+    }
+    
+    @media only screen and (min-width: 992px) {
+        .product_container  {
+            grid-template-columns: 330px 330px 330px;
+      } 
+    }
